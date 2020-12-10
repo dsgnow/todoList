@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-size: 18px;
+}
+/*# sourceMappingURL=reset.css.map */

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+$mainFont: 'Josefin Sans',
+sans-serif;
+
+
+$mainGradient: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+$mainColor: hsl(220, 98%, 61%);
+
+// Light Theme
+
+$lightGray:hsl(0, 0%, 98%);
+$veryLightGrayish: hsl(236, 33%, 92%);
+$lightGrayish:hsl(233, 11%, 84%);
+$darkGrayish: hsl(236, 9%, 61%);
+$veryDarkGrayish: hsl(235, 19%, 35%);
+
+// Dark Theme
+
+$veryDarkBlue: hsl(235, 21%, 11%);
+$veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$lightGrayishBlue: hsl(234, 39%, 85%);
+$lightGrayishBlue--hover: hsl(236, 33%, 92%);
+$darkGrayishBlue: hsl(234, 11%, 52%);
+$veryDarkGrayishBlue: hsl(233, 14%, 35%);
