@@ -6,4 +6,9 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   font-size: 18px;
 }
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
 /*# sourceMappingURL=reset.css.map */
