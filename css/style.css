@@ -14,10 +14,14 @@ input:focus {
 }
 
 /* font-family: 'Josefin Sans', sans-serif; */
+html {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #fafafa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,12 +30,14 @@ input:focus {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 1440px;
-  min-width: 200px;
+  min-width: 300px;
 }
 
 .background {
   width: 100vw;
-  height: 30vh;
+  min-width: 300px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .background__img {
@@ -42,26 +48,20 @@ input:focus {
   right: 0;
   bottom: 0;
   width: 100%;
-  min-width: 200px;
+  min-height: 200px;
 }
 
 .main {
-  width: 100vw;
-  height: 70vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 0 auto;
   z-index: 1;
-  background-color: #fafafa;
+  width: 80%;
+  min-width: 300px;
+  max-width: 600px;
 }
 
 .main__addNewItem {
@@ -75,10 +75,11 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  min-width: 100px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  min-width: 300px;
+  max-width: 600px;
   padding: 10px;
   margin: 10px 0;
   background-color: white;
@@ -87,6 +88,9 @@ input:focus {
 
 .main__input {
   border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  margin-top: 3px;
 }
 
 .circle {
@@ -100,15 +104,114 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-preferred-size: 10vw;
-      flex-basis: 10vw;
-  padding-right: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px 0 15px;
+  border-radius: 20px;
+  border: 1px solid #9394a5;
+  background-color: white;
+}
+
+.circle:hover {
+  border: double 1px transparent;
+  border-radius: 80px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white)), radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-image: linear-gradient(white, white), radial-gradient(circle at top left, #57ddff, #c058f3);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
 
 .circle__img {
-  height: 20px;
+  height: 10px;
   display: inline-block;
+  margin: 0 auto;
+  line-height: 30px;
+}
+
+.todoList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.todoList__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 200px;
+}
+
+.todoList__elem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  min-width: 200px;
+  width: 100%;
+  padding: 10px 10px;
+  border-bottom: 0.5px solid grey;
+  background-color: #fff;
+}
+
+.todoList__elem:nth-child(1) {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.todoList__img {
+  height: 10px;
+  display: inline-block;
+  margin: 0 auto;
+  line-height: 30px;
+}
+
+.todoList__options {
+  min-width: 200px;
+  width: 100%;
+  padding: 20px 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=style.css.map */

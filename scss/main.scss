@@ -1,16 +1,22 @@
+html {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 .wrapper {
     width: 100vw;
     height: 100vh;
-    background-color: white;
+    background-color: $lightGray;
     display: flex;
     flex-direction: column;
     max-width: 1440px;
-    min-width: 200px;
+    min-width: 300px;
 }
 
 .background {
     width: 100vw;
-    height: 30vh;
+    min-width: 300px;
+    height: 200px;
+    overflow: hidden;
 
     &__img {
         position: relative;
@@ -20,26 +26,30 @@
         right: 0;
         bottom: 0;
         width: 100%;
-        min-width: 200px;
+        min-height: 200px;
+
     }
 }
 
 .main {
-    width: 100vw;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
     z-index: 1;
-    background-color: $lightGray;
+    width: 80%;
+    min-width: 300px;
+    max-width: 600px;
+
 
     &__addNewItem {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-evenly;
-        min-width: 100px;
+        justify-content: left;
+        min-width: 300px;
+        max-width: 600px;
         padding: 10px;
         margin: 10px 0;
         background-color: white;
@@ -48,6 +58,9 @@
 
     &__input {
         border: none;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 14px;
+        margin-top: 3px;
     }
 
 }
@@ -58,14 +71,83 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    flex-basis: 10vw;
-    padding-right: 10px;
+    justify-content: center;
+    align-content: center;
+    width: 20px;
+    height: 20px;
+    margin: 0 15px 0 15px;
+    border-radius: 20px;
+    border: 1px solid $darkGrayish;
+    background-color: white;
+
+    &:hover {
+        border: double 1px transparent;
+        border-radius: 80px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+
+    }
 
     &__img {
-        height: 20px;
+        height: 10px;
         display: inline-block;
+        margin: 0 auto;
+        line-height: 30px;
     }
 }
 
-.main__input {}
+.todoList {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 5px;
+
+
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 200px;
+
+    }
+
+    &__elem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        min-width: 200px;
+        width: 100%;
+        padding: 10px 10px;
+        border-bottom: 0.5px solid grey;
+        background-color: #fff;
+    }
+
+    &__elem:nth-child(1) {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    &__img {
+        height: 10px;
+        display: inline-block;
+        margin: 0 auto;
+        line-height: 30px;
+    }
+
+    &__options {
+        min-width: 200px;
+        width: 100%;
+        padding: 20px 30px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

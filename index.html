@@ -23,15 +23,35 @@
         <h1>To do list</h1>
         <div class="main__addNewItem">
           <span class="circle main__circle">
-            <img class="circle__img" src="images/checkmark.svg" alt="check">
+            <img class="circle__img" src="images/check.svg" alt="check">
           </span>
           <input class="main__input" type="text" placeholder="Create a new todo">
         </div>
         <div class="main__todoList todoList">
           <ul class="todoList__list">
-            <li class="todoList__elem todoList__elem--active"><span
-                class="circle todoList__circle todoList__circle--active">Circle</span> Test 1</li>
+            <li class="todoList__elem todoList__elem--active">
+              <span class="circle todoList__circle todoList__circle--active">
+                <img class="todoList__img" src="images/check.svg" alt="check">
+              </span>
+              Test 1
+            </li>
+            <li class="todoList__elem">
+              <span class="circle todoList__circle todoList__circle--active">
+                <img class="todoList__img" src="images/check.svg" alt="check">
+              </span>
+              Test 2
+            </li>
+            <li class="todoList__elem">
+              <span class="circle todoList__circle todoList__circle--active">
+                <img class="todoList__img" src="images/check.svg" alt="check">
+              </span>
+              Test 3
+            </li>
           </ul>
+          <div class="todoList__options">
+            <span class="todoList__itemsLeft">Items Left</span>
+            <span class="todoList__completed">Completed</span>
+          </div>
         </div>
       </section>
     </div>
