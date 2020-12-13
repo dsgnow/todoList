@@ -20,7 +20,12 @@
         <img class="background__img" src="images/bg-mobile-light.jpg" alt="hills">
       </section>
       <section class="main">
-        <h1>To do list</h1>
+        <div class="main__features">
+          <h1>todo</h1>
+          <span class="main__changeColor">
+          <img class="changeColor__img" src="images/icon-sun.svg" alt="check">
+        </span>
+        </div>
         <div class="main__addNewItem">
           <span class="circle main__circle">
             <img class="circle__img" src="images/check.svg" alt="check">
@@ -31,36 +36,48 @@
           <ul class="todoList__list">
             <li class="todoList__elem todoList__elem--active">
               <span class="circle todoList__circle todoList__circle--active">
-                <img class="todoList__img" src="images/check.svg" alt="check">
+                <img class="circle__img" src="images/check.svg" alt="check">
               </span>
-              Test 1
+              <p>Test 1 sdsd</p>
+              <span class="delete todoList__delete">
+                <img class="delete__removeItem" src="images/icon-cross.svg" alt="check">
+              </span>
             </li>
             <li class="todoList__elem">
               <span class="circle todoList__circle todoList__circle--active">
-                <img class="todoList__img" src="images/check.svg" alt="check">
+                <img class="circle__img" src="images/check.svg" alt="check">
               </span>
-              Test 2
+              <p>Test 2 sdfsdfsdfasdasdasdasd asdasd asdasdas</p>
+              <span class="delete todoList__delete">
+                <img class="delete__removeItem" src="images/icon-cross.svg" alt="check">
+              </span>
             </li>
             <li class="todoList__elem">
               <span class="circle todoList__circle todoList__circle--active">
-                <img class="todoList__img" src="images/check.svg" alt="check">
+                <img class="circle__img" src="images/check.svg" alt="check">
               </span>
-              Test 3
+              <p>Test 3 sdfsdfsdf</p>
+              <span class="delete todoList__delete">
+                <img class="delete__removeItem" src="images/icon-cross.svg" alt="check">
+              </span>
             </li>
           </ul>
           <div class="todoList__options">
-            <span class="todoList__itemsLeft">Items Left</span>
-            <span class="todoList__completed">Completed</span>
+            <p class="todoList__itemsLeft"><span class="todoList__itemsLeft--count">0</span> Items Left</p>
+            <p class="todoList__clearCompleted">Clear completed</p>
           </div>
         </div>
+        <div class="main__filter filter">
+          <p class="filter__all filter__all--active">All</p>
+          <p class="filter__active">Active</p>
+          <p class="filter__completed">Completed</p>
+        </div>
+        <p class="main__reorder">Drag and drop to reorder list.</p>
       </section>
     </div>
   </main>
   <footer>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </div>
+
   </footer>
 
 </body>

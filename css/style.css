@@ -53,15 +53,40 @@ html {
 
 .main {
   position: absolute;
-  top: 150px;
+  top: 70px;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   margin: 0 auto;
   z-index: 1;
   width: 80%;
   min-width: 300px;
   max-width: 600px;
+}
+
+.main__features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.main__features h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 .main__addNewItem {
@@ -93,6 +118,13 @@ html {
   margin-top: 3px;
 }
 
+.main__reorder {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 14px;
+  color: #b4b4b4;
+}
+
 .circle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -110,7 +142,9 @@ html {
   -ms-flex-line-pack: center;
       align-content: center;
   width: 20px;
+  min-width: 20px;
   height: 20px;
+  min-height: 20px;
   margin: 0 15px 0 15px;
   border-radius: 20px;
   border: 1px solid #9394a5;
@@ -130,7 +164,21 @@ html {
   height: 10px;
   display: inline-block;
   margin: 0 auto;
-  line-height: 30px;
+}
+
+.delete {
+  margin-left: auto;
+  margin-right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .todoList {
@@ -145,19 +193,20 @@ html {
   background-color: #fff;
   width: 100%;
   border-radius: 5px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .todoList__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   min-width: 200px;
 }
 
@@ -172,14 +221,12 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
   min-width: 200px;
   width: 100%;
   padding: 10px 10px;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.5px solid #f1f1f1;
   background-color: #fff;
+  font-size: 14px;
 }
 
 .todoList__elem:nth-child(1) {
@@ -187,17 +234,15 @@ html {
   border-top-right-radius: 5px;
 }
 
-.todoList__img {
-  height: 10px;
-  display: inline-block;
-  margin: 0 auto;
-  line-height: 30px;
+.todoList__elem p {
+  margin-top: 3px;
+  font-size: 14px;
 }
 
 .todoList__options {
   min-width: 200px;
   width: 100%;
-  padding: 20px 30px;
+  padding: 15px 25px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   display: -webkit-box;
@@ -213,5 +258,44 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  font-size: 10px;
+}
+
+.todoList__options p,
+.todoList__options span {
+  font-size: 12px;
+}
+
+.filter {
+  min-width: 200px;
+  width: 100%;
+  padding: 15px 25px;
+  margin-top: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.filter p {
+  font-size: 15px;
+}
+
+.filter__all--active, .filter__active--active, .filter__completed--active {
+  color: #3a7bfd;
 }
 /*# sourceMappingURL=style.css.map */

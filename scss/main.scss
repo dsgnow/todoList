@@ -33,15 +33,33 @@ html {
 
 .main {
     position: absolute;
-    top: 150px;
+    top: 70px;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     margin: 0 auto;
     z-index: 1;
     width: 80%;
     min-width: 300px;
     max-width: 600px;
 
+    &__features {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 10px;
+
+        & h1 {
+            margin: 0;
+            padding: 0;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+
+        }
+    }
 
     &__addNewItem {
         display: flex;
@@ -63,6 +81,13 @@ html {
         margin-top: 3px;
     }
 
+    &__reorder {
+        margin: 50px auto;
+        text-align: center;
+        font-size: 14px;
+        color: rgb(180, 180, 180);
+    }
+
 }
 
 
@@ -74,7 +99,9 @@ html {
     justify-content: center;
     align-content: center;
     width: 20px;
+    min-width: 20px;
     height: 20px;
+    min-height: 20px;
     margin: 0 15px 0 15px;
     border-radius: 20px;
     border: 1px solid $darkGrayish;
@@ -93,8 +120,17 @@ html {
         height: 10px;
         display: inline-block;
         margin: 0 auto;
-        line-height: 30px;
     }
+}
+
+.delete {
+    margin-left: auto;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__removeItem {}
 }
 
 .todoList {
@@ -104,13 +140,12 @@ html {
     background-color: #fff;
     width: 100%;
     border-radius: 5px;
-
-
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 
     &__list {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         min-width: 200px;
 
     }
@@ -119,12 +154,12 @@ html {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: left;
         min-width: 200px;
         width: 100%;
         padding: 10px 10px;
-        border-bottom: 0.5px solid grey;
+        border-bottom: 0.5px solid rgb(241, 241, 241);
         background-color: #fff;
+        font-size: 14px;
     }
 
     &__elem:nth-child(1) {
@@ -132,22 +167,54 @@ html {
         border-top-right-radius: 5px;
     }
 
-    &__img {
-        height: 10px;
-        display: inline-block;
-        margin: 0 auto;
-        line-height: 30px;
+    &__elem p {
+        margin-top: 3px;
+        font-size: 14px;
     }
 
     &__options {
         min-width: 200px;
         width: 100%;
-        padding: 20px 30px;
+        padding: 15px 25px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        font-size: 10px;
+
+        & p,
+        & span {
+            font-size: 12px;
+        }
     }
+}
+
+.filter {
+    min-width: 200px;
+    width: 100%;
+    padding: 15px 25px;
+    margin-top: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 10px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+    & p {
+        font-size: 15px;
+    }
+
+    &__all--active,
+    &__active--active,
+    &__completed--active {
+        color: $mainColor;
+    }
+
+
 }
