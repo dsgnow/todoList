@@ -21,16 +21,16 @@ html {
         width: 100%;
         min-height: 200px;
         min-width: 300px;
-        content: url("images/bg-mobile-light.jpg");
+        content: url("./images/bg-mobile-light.jpg");
 
         &--changeToDark {
-            content: url("images/bg-mobile-dark.jpg");
+            content: url("./images/bg-mobile-dark.jpg");
             animation: changeBackground 1s;
             animation-fill-mode: forwards;
         }
 
         &--changeToLight {
-            content: url("images/bg-mobile-light.jpg");
+            content: url("./images/bg-mobile-light.jpg");
             animation: changeBackground2 1s;
             animation-fill-mode: forwards;
         }
@@ -78,7 +78,7 @@ html {
     }
 
     .changeColor__img--black {
-        content: url("images/icon-moon.svg");
+        content: url("./images/icon-moon.svg");
     }
 
     &__addNewItem {
@@ -345,10 +345,10 @@ html {
 @media (orientation: landscape) and (min-width: 800px) {
     .background {
         &__img {
-            content: url("images/bg-desktop-light.jpg");
+            content: url("./images/bg-desktop-light.jpg");
 
             &--changeToDark {
-                content: url("images/bg-desktop-dark.jpg");
+                content: url("./images/bg-desktop-dark.jpg");
             }
         }
     }
