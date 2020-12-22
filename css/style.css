@@ -113,11 +113,11 @@ html {
   width: 100%;
   min-height: 200px;
   min-width: 300px;
-  content: url("../../images/bg-mobile-light.jpg");
+  content: url("../images/bg-mobile-light.jpg");
 }
 
 .background__img--changeToDark {
-  content: url("../../images/bg-mobile-dark.jpg");
+  content: url("../images/bg-mobile-dark.jpg");
   -webkit-animation: changeBackground 1s;
           animation: changeBackground 1s;
   -webkit-animation-fill-mode: forwards;
@@ -125,7 +125,7 @@ html {
 }
 
 .background__img--changeToLight {
-  content: url("../../images/bg-mobile-light.jpg");
+  content: url("../images/bg-mobile-light.jpg");
   -webkit-animation: changeBackground2 1s;
           animation: changeBackground2 1s;
   -webkit-animation-fill-mode: forwards;
@@ -143,7 +143,6 @@ html {
   width: 80%;
   min-width: 300px;
   max-width: 600px;
-  overflow: hidden;
 }
 
 .main__features {
@@ -183,7 +182,7 @@ html {
 }
 
 .main .changeColor__img--black {
-  content: url("../../images/icon-moon.svg");
+  content: url("../images/icon-moon.svg");
 }
 
 .main__addNewItem {
@@ -307,6 +306,7 @@ html {
   border-radius: 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  overflow: hidden;
 }
 
 .todoList__list {
@@ -516,10 +516,10 @@ html {
 
 @media (orientation: landscape) and (min-width: 800px) {
   .background__img {
-    content: url("../../images/bg-desktop-light.jpg");
+    content: url("../images/bg-desktop-light.jpg");
   }
   .background__img--changeToDark {
-    content: url("../../images/bg-desktop-dark.jpg");
+    content: url("../images/bg-desktop-dark.jpg");
   }
 }
 /*# sourceMappingURL=style.css.map */
