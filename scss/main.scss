@@ -1,16 +1,9 @@
 html {
     font-family: 'Josefin Sans', sans-serif;
+    background-color: $lightGray;
 }
 
-.wrapper {
-    width: 100vw;
-    height: 100vh;
-    background-color: $lightGray;
-    display: flex;
-    flex-direction: column;
-    max-width: 1440px;
-    min-width: 300px;
-}
+.wrapper {}
 
 .background {
     width: 100vw;
@@ -27,7 +20,20 @@ html {
         bottom: 0;
         width: 100%;
         min-height: 200px;
+        min-width: 300px;
+        content: url("/images/bg-mobile-light.jpg");
 
+        &--changeToDark {
+            content: url("/images/bg-mobile-dark.jpg");
+            animation: changeBackground 1s;
+            animation-fill-mode: forwards;
+        }
+
+        &--changeToLight {
+            content: url("/images/bg-mobile-light.jpg");
+            animation: changeBackground2 1s;
+            animation-fill-mode: forwards;
+        }
     }
 }
 
@@ -41,6 +47,7 @@ html {
     width: 80%;
     min-width: 300px;
     max-width: 600px;
+    overflow: hidden;
 
     &__features {
         display: flex;
@@ -61,6 +68,19 @@ html {
         }
     }
 
+    &__changeColor {
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .changeColor__img--black {
+        content: url("/images/icon-moon.svg");
+    }
+
     &__addNewItem {
         display: flex;
         flex-direction: row;
@@ -79,10 +99,11 @@ html {
         font-family: 'Josefin Sans', sans-serif;
         font-size: 14px;
         margin-top: 3px;
+        color: $darkGrayish;
     }
 
     &__reorder {
-        margin: 50px auto;
+        margin: 30px auto;
         text-align: center;
         font-size: 14px;
         color: rgb(180, 180, 180);
@@ -106,20 +127,27 @@ html {
     border-radius: 20px;
     border: 1px solid $darkGrayish;
     background-color: white;
-
-    &:hover {
-        border: double 1px transparent;
-        border-radius: 80px;
-        background-image: linear-gradient(white, white), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
-        background-origin: border-box;
-        background-clip: content-box, border-box;
-
-    }
+    cursor: pointer;
 
     &__img {
         height: 10px;
         display: inline-block;
         margin: 0 auto;
+        opacity: 0;
+        pointer-events: none;
+
+        &--completed {
+            opacity: 1;
+        }
+    }
+
+
+    &:not(.todoList__circle--completed):hover {
+        border: double 1px transparent;
+        border-radius: 80px;
+        background-image: linear-gradient(white, white), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        background-origin: border-box;
+        background-clip: content-box, border-box;
     }
 }
 
@@ -129,15 +157,19 @@ html {
     display: flex;
     flex-direction: row;
     align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
 
-    &__removeItem {}
+    &:hover {
+        transform: scale(1.1);
+    }
+
 }
 
 .todoList {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background-color: #fff;
     width: 100%;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -160,6 +192,17 @@ html {
         border-bottom: 0.5px solid rgb(241, 241, 241);
         background-color: #fff;
         font-size: 14px;
+
+        &--remove {
+            animation: removeItem 0.8s;
+            animation-fill-mode: forwards;
+        }
+
+        &--completed {
+            text-decoration: line-through;
+        }
+
+
     }
 
     &__elem:nth-child(1) {
@@ -170,6 +213,14 @@ html {
     &__elem p {
         margin-top: 3px;
         font-size: 14px;
+    }
+
+    &__circle--completed {
+        background-image: $mainGradient;
+    }
+
+    &__clearCompleted {
+        cursor: pointer;
     }
 
     &__options {
@@ -183,6 +234,7 @@ html {
         align-items: center;
         justify-content: space-between;
         font-size: 10px;
+        background-color: white;
 
         & p,
         & span {
@@ -208,13 +260,96 @@ html {
 
     & p {
         font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
     }
 
-    &__all--active,
-    &__active--active,
-    &__completed--active {
+    &--active {
         color: $mainColor;
     }
 
 
+}
+
+.html--changeToDark {
+    background-color: $veryDarkBlue;
+
+    .main__addNewItem,
+    .main__todoList,
+    .todoList__options,
+    .main__filter,
+    .main__input,
+    li {
+        background-color: $veryDarkDesaturatedBlue !important;
+    }
+
+    .circle {
+        background-color: $veryDarkDesaturatedBlue;
+
+        &:not(.todoList__circle--completed):hover {
+            background-image: linear-gradient($veryDarkDesaturatedBlue, $veryDarkDesaturatedBlue), radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+    }
+
+    .todoList {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+
+        &__elem {
+            border-bottom: 0.5px solid $veryDarkGrayishBlue !important;
+
+        }
+
+        &__elem p {
+            color: $lightGrayish;
+        }
+
+        &__options {
+            min-width: 200px;
+            width: 100%;
+            padding: 15px 25px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 10px;
+
+            & p,
+            & span {
+                color: $veryDarkGrayishBlue;
+            }
+        }
+    }
+
+    .filter {
+
+        & p {
+            color: $veryDarkGrayishBlue;
+        }
+
+        &--active {
+            color: $mainColor !important;
+        }
+    }
+
+    .main__reorder {
+        color: $veryDarkGrayishBlue;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 800px) {
+    .background {
+        &__img {
+            content: url("/images/bg-desktop-light.jpg");
+
+            &--changeToDark {
+                content: url("/images/bg-desktop-dark.jpg");
+            }
+        }
+    }
 }

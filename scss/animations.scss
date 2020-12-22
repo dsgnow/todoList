@@ -1,0 +1,43 @@
+@keyframes changeBackground {
+    0% {
+        opacity: 50%;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes changeBackground2 {
+    0% {
+        opacity: 50%;
+    }
+
+    50% {
+        color: white;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes removeItem {
+    0% {
+        opacity: 90%;
+    }
+
+    50% {
+        opacity: 40%;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+        display: none;
+    }
+}
