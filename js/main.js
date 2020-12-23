@@ -125,50 +125,38 @@ document.querySelector('.main__changeColor').addEventListener('click', changeCol
 
 //drag and drop
 document.addEventListener("drag", function( event ) {
-
 }, false);
 
 document.addEventListener("dragstart", function( event ) {
-    // store a ref. on the dragged elem
     dragged = event.target;
-    // make it half transparent
     event.target.style.opacity = .9;
 }, false);
 
 document.addEventListener("dragend", function( event ) {
-    // reset the transparency
     event.target.style.opacity = "";
 }, false);
 
-/* events fired on the drop targets */
 document.addEventListener("dragover", function( event ) {
-  // prevent default to allow drop
   event.preventDefault();
 }, false);
 
 document.addEventListener("dragenter", function( event ) {
-  // highlight potential drop target when the draggable element enters it
   if (event.target.classList.contains("todoList__elem") ) {
       event.target.style.background = "hsl(0, 0%, 98%)";
   }
-
 }, false);
 
 document.addEventListener("dragleave", function( event ) {
-  // reset background of potential drop target when the draggable element leaves it
   if ( event.target.classList.contains("todoList__elem") ) {
       event.target.style.background = "";
   }
-
 }, false);
 
 document.addEventListener("drop", function( event ) {
-  // prevent default action (open as link for some elements)
   let indexEvent = '';
   let indexDragged = '';
+  const actualLiElems = [...document.querySelectorAll('li p')]; 
 
-  const actualLiElems = [...document.querySelectorAll('li p')];
-  
   actualLiElems.forEach(function (actualLiElem, index) {
     if (actualLiElem.textContent == event.target.textContent) {
       indexEvent = index;
@@ -178,14 +166,10 @@ document.addEventListener("drop", function( event ) {
     }
 });
 
-  console.log(indexDragged, indexEvent);
   event.preventDefault();
-  // move dragged elem to the selected drop target
   if ( event.target.classList.contains("todoList__elem") ) {
       event.target.style.background = "";
-      // dragged.parentNode.removeChild( dragged );
       indexDragged>indexEvent?event.target.insertAdjacentElement('beforebegin', dragged):event.target.insertAdjacentElement('afterend', dragged);
       liElements = document.querySelectorAll('li');
   }
-
 }, false);
